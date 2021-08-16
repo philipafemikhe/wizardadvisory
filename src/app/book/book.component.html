@@ -1,0 +1,110 @@
+<div id="about" data-scroll-index="1" class="section wb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Create Book</h3>
+                <form id="addCategoryForm" (ngSubmit)="onSubmit()">
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label class="form-label" for="bookTitle">
+                                Book Category
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <select class="form-control" id="category" [(ngModel)]="book.category" required name="category">
+                                <option *ngFor="let category of categories" value="{{category.categoryTitle}}">{{category.categoryTitle}}</option>
+                            </select>
+                        </div>                        
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label class="form-label" for="bookTitle">
+                                Title
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="bookTitle" required [(ngModel)]="book.bookTitle" name="bookTitle">
+                        </div>                        
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label class="form-label" for="description">
+                                Description
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="description" required [(ngModel)]="book.description" name="description">
+                        </div> 
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label class="form-label" for="bookTitle">
+                                Author
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="author" required [(ngModel)]="book.author" name="author">
+                        </div>                        
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label class="form-label" for="bookTitle">
+                                Book Image
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="file" class="form-control" id="photo" [(ngModel)]="photo" required name="photo">
+                                 
+                        </div>                        
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-8">
+                            <button type="submit" class="btn btn-primary">Add Book</button>
+                        </div> 
+                    </div>
+
+                    
+                </form>
+            </div>
+            <div class="col-md-8">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3>List of Books</h3>
+                    </div>
+                    <div class="panel-body">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>SN</th>
+                            <th>BookCategory</th>
+                            <th>BookTitle</th>
+                            <th>Author</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let book of bookList; index as i">
+                            <td>{{i+1}}</td>
+                            <td>{{book.category}}</td>
+                            <td>{{book.bookTitle}}</td>
+                            <td>{{book.author}}</td>
+                            <td><button (click)="deleteBook(book.id)" class="btn btn-danger">Delete</button>
+                                <button (click)="updateBook(book.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+            </div>
+            <h3></h3>
+        </div>
+    </div>
+</div>

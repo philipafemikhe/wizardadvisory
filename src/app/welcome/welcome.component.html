@@ -1,0 +1,75 @@
+ <div id="about" data-scroll-index="1" class="section wb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="message-box">
+                    <h4>Book Library</h4>
+                    <!-- <h2>WizardAdvisory Library</h2>
+                    <blockquote class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</blockquote>
+
+                    <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed vitae rutrum neque. Ut id erat sit amet libero bibendum aliquam. Donec ac egestas libero, eu bibendum risus. Phasellus et congue justo. </p>
+
+                    <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1">Learn More</a> -->
+                    <div class="panel panel-primary">
+                        
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3" style="background-color: red; color:#ffffff;margin-top:2em; min-height: 300px;"> 
+                                    <h3>Categories</h3>
+                                    <ul>
+                                        <li  *ngFor="let category of categories index as i">
+                                            <button (click) = "loadBooksIncategory(category.categoryTitle)" 
+                                                style="border:none; background-color: red;color: #ffffff;">{{category.categoryTitle}}</button>
+                                        </li>
+
+                                        <li>
+                                            <button (click)="loadAll()" 
+                                                style="border:none; background-color: red;color: #ffffff;">All Categories</button>
+                                        </li>
+
+                                    </ul> 
+                                </div>
+                                <div class="col-md-9">
+                                     <!-- <h3>List of Books</h3>  -->
+                                     <div class="row">
+                                         <div class="col-md-3" *ngFor="let book of books index as i">
+                                            <div align="center" style="margin:0.5em; padding:0.5em; min-height: 200px;font-size: 0.8em;">
+                                                <img src="../../assets/images/book.jpg" style="width:80%; height: auto;">
+                                                <h5><span style="background-color: #000000; color:#ffffff;">Title: </span>{{book.bookTitle}}</h5>
+                                                <p><span style="background-color: #000000; color:#ffffff;">Description:</span> {{book.description}}<br>
+                                                    <span style="background-color: #000000; color:#ffffff;">Author:</span> {{book.author}}  </p>  
+                                            </div>                                                                                     
+                                         </div>
+                                     </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end messagebox -->
+            </div><!-- end col -->
+
+            <!-- <div class="col-md-6">
+                <div class="post-media wow fadeIn">
+                    <img src="./assets/uploads/about_04.png" alt="" class="img-responsive img-rounded">
+                    <a href="http://www.youtube.com/watch?v=nrJtHemSPW4" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
+                </div> 
+            </div>  -->
+        </div><!-- end row -->
+
+        <hr class="hr1"> 
+
+        <!-- <div class="row">
+            <div class="col-md-3">
+                <h3>Book categories</h3>
+            </div>
+            <div class="col-md-9">
+                <h3>List of Books</h3>
+        
+            </div>
+        
+        </div> -->
+    </div><!-- end container -->
+    
+</div><!-- end section -->
+
